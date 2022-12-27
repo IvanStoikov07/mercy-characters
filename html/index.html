@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    <title>Mercy - Characters</title>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.css" rel="stylesheet" integrity="sha512-3icgkoIO5qm2D4bGSUkPqeQ96LS8+ukJC7Eqhl1H5B2OJMEnFqLmNDxXVmtV/eq5M65tTDkUYS/Q0P4gvZv+yA==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+</head>
+    <body>  
+        <div class="container noselect">                         
+            <div class="main-screen">
+                <!-- [ CHARACTER LIST ] -->
+                <div class="characters-list"> 
+                    <div class="character-list-header"><p>https://discord.gg/GsQBeTtr8E | FIVEM BULGARIA</p></div>
+                    <div class="character-list-header-select"><p>Изберете Герой</p></div> 
+                    <div class="character" id="char-1" data-cid=""> 
+                        <span id="slot-icon"><i class="fas fa-user fa-3x"></i></span> 
+                        <span id="slot-name">Избери слот</span>
+                        <span id="slot-name-description">Без информация...</span> 
+                    </div> 
+                    <div class="character" id="char-2" data-cid=""> 
+                        <span id="slot-icon"><i class="fas fa-user fa-3x"></i></span> 
+                        <span id="slot-name">Избери слот</span>
+                        <span id="slot-name-description">Без информация...</span>
+                    </div> 
+                    <div class="character" id="char-3" data-cid=""> 
+                        <span id="slot-icon"><i class="fas fa-user fa-3x"></i></span> 
+                        <span id="slot-name">Избери слот</span>
+                        <span id="slot-name-description">Без информация...</span>
+                    </div> 
+                    <div class="character" id="char-4" data-cid=""> 
+                        <span id="slot-icon"><i class="fas fa-user fa-3x"></i></span> 
+                        <span id="slot-name">Избери слот</span>
+                        <span id="slot-name-description">Без информация...</span>
+                     </div> 
+                     <div class="play-button">
+                         <span id="button-icon"><i class="fas fa-check fa-3x"></i></span>
+                         <div class="play-btn"><p id="play-text">Продължи</p></div>
+                         <span id="button-name-description"><p id="play-text-description">Потвърди</p></span>
+                    </div> 
+                    <div class="delete-button">
+                        <span id="button-icon"><i class="fas fa-trash-alt fa-3x"></i></span>
+                        <div class="delete-btn"><p id="delete-text">Изтрий</p></div>
+                        <span id="button-name-description">Изтрий Герой</span>
+                    </div>
+                    <div class="disconnect-button">
+                        <span id="button-icon"><i class="fas fa-ban fa-3x"></i></span>
+                        <div class="disconnect-btn"><p id="disconnect-text">Излез</p></div>
+                        <span id="button-name-description">Излез от сървъра</span>
+                    </div> 
+                </div>
+                <!-- [ DELETE CONFIRMATION ] -->
+                <div class="delete-confirmation">
+                    <div class="delete-confirmation-title">Наистина ли искате да изтриете този герой?</div>
+                    <div class="delete-confirmation-buttons">
+                        <div class="delete-confirmation-button" id="delete-accept">
+                            <span id="button-icon-del"><i class="fas fa-ban fa-2x"></i></span>
+                            <div class="delete-confirmation-btn"><p id="delete-text">Потвърди</p></div>
+                        </div>
+                        <div class="delete-confirmation-button" id="delete-cancel">
+                            <span id="button-icon-del"><i class="fas fa-ban fa-2x"></i></span>
+                            <div class="delete-confirmation-btn"><p id="delete-text">Откажи</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ DISCONNECT CONFIRMATION ] -->
+                <div class="disconnect-confirmation">
+                    <div class="disconnect-confirmation-title">Искате ли да излезете от сървъра?</div>
+                    <div class="disconnect-confirmation-buttons">
+                        <div class="disconnect-confirmation-button" id="disconnect-accept">
+                            <span id="button-icon-disc"><i class="fas fa-ban fa-2x"></i></span>
+                            <div class="disconnect-confirmation-btn"><p id="disconnect-text">Продължи</p></div>
+                        </div>
+                        <div class="disconnect-confirmation-button" id="disconnect-cancel">
+                            <span id="button-icon-disc"><i class="fas fa-ban fa-2x"></i></span>
+                            <div class="disconnect-confirmation-btn"><p id="disconnect-text">Откажи</p></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- [ REGISTER MENU ] -->
+                <div class="character-register-new"> 
+                    <div class="char-waiting-spinner"> 
+                        <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div> <p>Зареждане</p> </div> 
+                        <div class="character-register-new-content"> 
+                            <div class="character-list-header-return"><i class="fas fa-arrow-circle-left"></i></div> 
+                            <div class="character-list-header-reg"><p>СЪЗДАВАНЕ НА ГЕРОИ</p></div> 
+                            <div class="character-list-header-select-reg"><p>ИМЕ</p></div> 
+                            <div class="char-register-inputs-new"> 
+                                <div class="firstname"> <input type="text" id="first_name" class="char-reg-input-new" required> </div> 
+                                <div class="lastname"> <input type="text" id="last_name" class="char-reg-input-new" required> </div> 
+                                <div class="nationality"> <input type="text" id="nationality" class="char-reg-input-new" required> </div> 
+                                <div class="birthdate"> <input type="date" id="birthdate" class="char-reg-input-new"  min="01-01-1900" max="12-31-2999" required> </div> 
+                                <div class="gender"> <select id="gender" name="gender"> <option value="man" selected>Мъж</option> <option value="woman">жена</option> </select> </div> 
+                            </div> 
+                            <div class="next-button"> 
+                                <span id="button-icon-reg"><i class="fas fa-arrow-circle-right fa-3x"></i></span> 
+                                <div class="next-btn" id="next"><p id="next-text">Продължи</p></div> 
+                                <span id="button-name-description"><p id="next-text-description">Потвърди</p></span> 
+                            </div> 
+                    </div> 
+                </div>
+                <!-- [ NOTIFICATIONS ] -->
+                <div class="notification-container"> <div class="notification-title"></div> <div class="notification-text">AwayFromKane#0001</div> </div>
+            </div>
+        </div>
+    </body>
+    <!-- JS -->
+    <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</html>
